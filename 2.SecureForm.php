@@ -58,27 +58,28 @@ $qrCodeOutput = "<img src='{$grCodeUri}'>";
  * Fonction de vérification du formulaire
  ***********************/
 // Fonction qui renvoie true si login et mot de passe sont corrects
-function checkLoginPassword($login,$password)
+function checkLoginPassword($login, $password)
 {
     if ($login=='toto' && $password=='titi') return true;
     return false;
 }
 
 // Vérifie la valeur OTP
-function checkOTP($otp)
+function checkOTP($otp_form): bool
 {
-    $otpServer = $otp->now();
+    global $otp;
 
-    return $totp->verify($otp,$maintenant);
+    return $otp->verify($otp_form);
 }
 
+$formOutput = '';
 // Traitement du formulaire de login:
 if (!empty($_POST['login']))
 {
-    if ( checkLoginPassword($_POST['login'], $_POST['password'] ) && checkOTP($_POST['otp']) )
-         echo "Login OK !";
+    if ( checkLoginPassword($_POST['login'], $_POST['password'] ) && checkOTP( $_POST['otp'] ) )
+        $formOutput = "Login OK !";
     else
-         echo "Echec login";
+        $formOutput = "Echec login";
 }
 ?>
 
@@ -113,7 +114,7 @@ if (!empty($_POST['login']))
             <input type="submit" value="Login"><br>
         </form>
         <hr>
-        <h2>Retour du formulaire<?= $formOutput; ?></h2>
+        <h2>Retour du formulaire <br><br> <b><?= $formOutput; ?></b></h2>
 
     </body>
 </html>

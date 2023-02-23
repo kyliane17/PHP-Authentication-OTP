@@ -30,7 +30,7 @@ $otp->setLabel('BTS SIO SLAM'); // The label
 $otp->setIssuer('Lycée Fenelon');
 $otp->setParameter('image', 'https://avatars.githubusercontent.com/u/1199051?v=4'); // FreeOTP can display image
 
-$otpOutput = "The current OTP is: {$otp->now()}\n";
+$otpOutput = "{$otp->now()}\n";
 
 /***********************
  * Affichage du temps pour information
@@ -64,15 +64,15 @@ $qrCodeOutput = "<img src='{$grCodeUri}'>";
         <div>
             <span>Secret: <?= $secretOutput; ?></span>
         </div>
-
+        <br>
         <div>
-            <span>Current OTP: <?= $otpOutput; ?></span>
+            <span>Current OTP: <b><?= $otpOutput; ?></b></span>
         </div>
-
+        <br>
         <div>
             <span>Date: <?= $dateOutput; ?></span>
         </div>
-
+        <br>
         <div>
             <?= $qrCodeOutput; ?>
         </div>
