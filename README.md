@@ -1,6 +1,6 @@
 # PHP authentification via One Time Password (OTP) 👋
 
-[img.png](img/img.png)
+[img.png](https://github.com/LiliwoL/PHP-Authentication-OTP/blob/php7/img/img.png)
 
 
 https://freeotp.github.io
