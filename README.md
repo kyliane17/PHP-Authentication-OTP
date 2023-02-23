@@ -1,20 +1,41 @@
 # PHP authentification via One Time Password (OTP) 👋
 
-[https://github.com/LiliwoL/PHP-Authentication-OTP/blob/php7/img/img.png](https://github.com/LiliwoL/PHP-Authentication-OTP/blob/php7/img/img.png)
+![Image](https://github.com/LiliwoL/PHP-Authentication-OTP/raw/php7/img/img.png)
 
+> ⚠️⚠️⚠️⚠️ ATTENTION **Ceci est valable pour une version Php < 8** ⚠️⚠️⚠️⚠️
 
-https://freeotp.github.io
+# Sommaire
 
+[toc]
 
-Ceci est valable pour une version Php < 8
+# Sources et dépendances
 
->>> Version dépassée et non sécurisée!
+Application FreeOTP sur Android et iTruc
+* [Application FreeOTP](hhttps://freeotp.github.io)
 
+> Marche aussi avec Google Authenticator
 
-# Dépendances
+Librairie de génération du OTP **(en version 10.0.3 si on est en PHP < 8)**
+* [Otphp par Spomky labs sur Packagist](https://packagist.org/packages/spomky-labs/otphp#v10.0.3)
+* [Otphp par Spomky labs sur GitHub](https://github.com/Spomky-Labs/otphp/tree/10.0.x)
 
-https://packagist.org/packages/spomky-labs/otphp#v10.0.3
+# Installation de la dépendance
 
-https://github.com/Spomky-Labs/otphp/tree/10.0.x
+Installation de la dépendance via **composer**:
 
+```bash
 composer require spomky-labs/otphp:10.0.3
+```
+
+# Utilisation de ce dépôt
+
+* Cloner le dépôt
+```bash
+git clone git@github.com:LiliwoL/PHP-Authentication-OTP.git
+cd PHP-Authentication-OTP
+```
+
+* Installer les dépendances (composer doit être installé!)
+```bash
+composer install
+```

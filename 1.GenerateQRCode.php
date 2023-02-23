@@ -6,14 +6,16 @@ use OTPHP\TOTP;
 
 /***********************
  * Génération d'un secret
-***********************/
+ ***********************/
 $otp = TOTP::create();
+
+// Génération à la volée
 $secret = $otp->getSecret();
 
-
-// Utilisation d'un secret déjà généré
+// ou utilisation d'un secret déjà généré par nos soins (pour les tests)
 $secret = "XVEZ4O2QCL2FYNIAJCIUNDJAKTAWL45S6SCXKJJEBGZNFN7BB4XFOKA3LNX4U3ERMSLSK4AUMKRVWU3YTYXMBK3WFDQQHPVT745CGMA";
-$secretOutput = "The OTP secret is: {$secret}\n";
+
+echo "The OTP secret is: {$secret}\n";
 
 
 
@@ -21,9 +23,9 @@ $secretOutput = "The OTP secret is: {$secret}\n";
  * Création du TOTP avec des informations précises
  ***********************/
 $otp = TOTP::create(
-    $secret,                   // secret utilisé (généré plus haut
+    $secret,                   // secret utilisé (généré plus haut)
     30,                 // période de validité
-    'sha256',           // Algorithm used
+    'sha256',           // Algorithme utilisé
     6                   // 6 digits
 );
 $otp->setLabel('BTS SIO SLAM'); // The label

@@ -20,9 +20,9 @@ $secretOutput = "The OTP secret is: {$secret}\n";
  * Création du TOTP avec des informations précises
  ***********************/
 $otp = TOTP::create(
-    $secret,                   // secret utilisé (généré plus haut
+    $secret,                   // secret utilisé (généré plus haut)
     30,                 // période de validité
-    'sha256',           // Algorithm used
+    'sha256',           // Algorithme utilisé
     6                   // 6 digits
 );
 $otp->setLabel('BTS SIO SLAM'); // The label
