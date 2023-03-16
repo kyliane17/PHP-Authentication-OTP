@@ -12,7 +12,7 @@ $secret = $otp->getSecret();
 
 
 // Utilisation d'un secret déjà généré
-$secret = "XVEZ4O2QCL2FYNIAJCIUNDJAKTAWL45S6SCXKJJEBGZNFN7BB4XFOKA3LNX4U3ERMSLSK4AUMKRVWU3YTYXMBK3WFDQQHPVT745CGMA";
+$secret = "NZXXK5TFMF2WG33EMUZTE43FMNZGK5DVORUWY2LTMVZA====";
 $secretOutput = "The OTP secret is: {$secret}\n";
 
 
@@ -25,9 +25,9 @@ $otp = TOTP::create(
     'sha256',           // Algorithme utilisé
     6                   // 6 digits
 );
-$otp->setLabel('BTS SIO SLAM'); // The label
-$otp->setIssuer('Lycée Fenelon');
-$otp->setParameter('image', 'https://avatars.githubusercontent.com/u/1199051?v=4'); // FreeOTP can display image
+$otp->setLabel('Kyliane Texier'); // The label
+$otp->setIssuer('Modif kyliane ');
+$otp->setParameter('image', 'https://avatars.githubusercontent.com/u/95354379?s=400&v=4'); // FreeOTP can display image
 
 $otpOutput = "The current OTP is: {$otp->now()}\n";
 
@@ -60,7 +60,7 @@ $qrCodeOutput = "<img src='{$grCodeUri}'>";
 // Fonction qui renvoie true si login et mot de passe sont corrects
 function checkLoginPassword($login, $password)
 {
-    if ($login=='toto' && $password=='titi') return true;
+    if ($login=='kyliane' && $password=='texier') return true;
     return false;
 }
 
